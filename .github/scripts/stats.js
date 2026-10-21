@@ -226,7 +226,7 @@ function langsSvg({ languages }, t) {
 
 // a pony lying on the card's top edge: `rest` is the y (in the pony's own
 // viewBox) that touches the edge, so hooves can hang a little over it
-const LANGS_PONY = { file: 'ponies/luna_sleeping.svg', x: 150, width: 330, rest: 322 };
+const LANGS_PONY = { file: 'ponies/luna_sleeping.svg', x: 150, width: 330, rest: 303 };
 
 function pony({ file, x, width, rest }) {
   if (!fs.existsSync(file)) return { top: 0, svg: '' };
