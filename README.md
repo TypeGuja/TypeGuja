@@ -7,8 +7,8 @@
 ## 📊 Статистика
 
 <p align="center">
-  <img src="./github-stats.svg" alt="Статистика GitHub" height="190" />
-  <img src="./github-streak.svg" alt="Серия активности" height="190" />
+  <img src="./github-stats.svg" alt="Статистика GitHub" width="42%" />
+  <img src="./github-streak.svg" alt="Серия активности" width="42%" />
 </p>
 
 <p align="center">

@@ -153,16 +153,17 @@ function statsSvg({ stats: s }, t) {
 function streakSvg({ stats: s, cur, best, firstDay }, t) {
   const col = (x, big, cap, sub, delay) => `
   <g class="f" style="animation-delay:${delay}ms" text-anchor="middle">
-    <text class="big" x="${x}" y="88">${big}</text>
-    <text class="cap" x="${x}" y="122">${cap}</text>
-    <text class="sub" x="${x}" y="144">${sub}</text>
+    <text class="big" x="${x}" y="116">${big}</text>
+    <text class="cap" x="${x}" y="150">${cap}</text>
+    <text class="sub" x="${x}" y="172">${sub}</text>
   </g>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img">
+  // same 250 px height as the stats card: they share a row in the README
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="250" viewBox="0 0 495 250" role="img">
   <title>${t.current}: ${cur.n}</title>
   ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="494" height="194" class="bg"/>
-  <line x1="165" y1="40" x2="165" y2="155" class="ln"/>
-  <line x1="330" y1="40" x2="330" y2="155" class="ln"/>${
+  <rect x="0.5" y="0.5" rx="6" width="494" height="249" class="bg"/>
+  <line x1="165" y1="68" x2="165" y2="183" class="ln"/>
+  <line x1="330" y1="68" x2="330" y2="183" class="ln"/>${
   col(82.5, s.total, t.total, `${t.since} ${fmt(firstDay, t)}`, 150)}${
   col(247.5, cur.n, t.current, range(cur, t), 300)}${
   col(412.5, best.n, t.longest, range(best, t), 450)}

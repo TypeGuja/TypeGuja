@@ -7,8 +7,8 @@ I write all kinds of things in **Rust**: my own 3D engine with RTX, firmware for
 ## 📊 Stats
 
 <p align="center">
-  <img src="./github-stats-en.svg" alt="GitHub stats" height="190" />
-  <img src="./github-streak-en.svg" alt="Contribution streak" height="190" />
+  <img src="./github-stats-en.svg" alt="GitHub stats" width="42%" />
+  <img src="./github-streak-en.svg" alt="Contribution streak" width="42%" />
 </p>
 
 <p align="center">
