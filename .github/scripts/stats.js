@@ -225,6 +225,8 @@ function langsSvg({ languages, rowH }, t) {
 // a pony lying on the card's top edge: `rest` is the y (in the pony's own
 // viewBox) that touches the edge, so hooves can hang a little over it
 const LANGS_PONY = { file: 'ponies/luna_sleeping.svg', x: 150, width: 330, rest: 283 };
+// flying above the card, only the tail curl dips over the edge
+const TOP_PONY = { file: 'ponies/celestia_flying.svg', x: 280, width: 200, rest: 900 };
 
 function pony({ file, x, width, rest }) {
   if (!fs.existsSync(file)) return { top: 0, svg: '' };
@@ -249,11 +251,14 @@ function topSvg({ recent, rowH }, t, descs) {
   </g>`;
   }).join('');
   const H = rowH;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H}" viewBox="0 0 495 ${H}" role="img">
+  const p = pony(TOP_PONY);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H + p.top}" viewBox="0 0 495 ${H + p.top}" role="img">
   <title>${t.top}</title>
   ${STYLE}
+  <g transform="translate(0, ${p.top})">
   <rect x="0.5" y="0.5" rx="6" width="494" height="${H - 1}" class="bg"/>
   <text class="h" x="25" y="38">${t.top}</text>${rows}
+  </g>${p.svg}
 </svg>
 `;
 }
