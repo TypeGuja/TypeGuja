@@ -210,15 +210,31 @@ function langsSvg({ languages }, t) {
   </g>`;
   }).join('');
   const H = 100 + Math.ceil(top.length / 2) * 36 + 4;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H}" viewBox="0 0 495 ${H}" role="img">
+  const p = pony(LANGS_PONY);
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H + p.top}" viewBox="0 0 495 ${H + p.top}" role="img">
   <title>${t.langs}</title>
   ${STYLE}
+  <g transform="translate(0, ${p.top})">
   <rect x="0.5" y="0.5" rx="6" width="494" height="${H - 1}" class="bg"/>
   <text class="h" x="25" y="38">${t.langs}</text>
   <clipPath id="b"><rect x="25" y="58" width="${W}" height="10" rx="5"/></clipPath>
   <g clip-path="url(#b)">${bar}</g>${rows}
+  </g>${p.svg}
 </svg>
 `;
+}
+
+// a pony lying on the card's top edge: `rest` is the y (in the pony's own
+// viewBox) that touches the edge, so hooves can hang a little over it
+const LANGS_PONY = { file: 'ponies/luna_sleeping.svg', x: 150, width: 330, rest: 322 };
+
+function pony({ file, x, width, rest }) {
+  if (!fs.existsSync(file)) return { top: 0, svg: '' };
+  const src = fs.readFileSync(file, 'utf8');
+  const vw = +src.match(/viewBox="0 0 ([\d.]+)/)[1];
+  const s = width / vw;
+  const body = src.replace(/^[\s\S]*?<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '');
+  return { top: Math.ceil(rest * s), svg: `\n  <g transform="translate(${x}, 0) scale(${s.toFixed(4)})">${body}</g>` };
 }
 
 function heatSvg({ cal }, t) {
