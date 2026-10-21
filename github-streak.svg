@@ -25,7 +25,7 @@
   <line x1="165" y1="40" x2="165" y2="155" class="ln"/>
   <line x1="330" y1="40" x2="330" y2="155" class="ln"/>
   <g class="f" style="animation-delay:150ms" text-anchor="middle">
-    <text class="big" x="82.5" y="88">1069</text>
+    <text class="big" x="82.5" y="88">1075</text>
     <text class="cap" x="82.5" y="122">Всего вкладов</text>
     <text class="sub" x="82.5" y="144">с 1 янв 2025</text>
   </g>
