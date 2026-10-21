@@ -226,7 +226,7 @@ function langsSvg({ languages, rowH }, t) {
 // viewBox) that touches the edge, so hooves can hang a little over it
 const LANGS_PONY = { file: 'ponies/luna_sleeping.svg', x: 150, width: 330, rest: 283 };
 // flying above the card, only the tail curl dips over the edge
-const TOP_PONY = { file: 'ponies/celestia_flying.svg', x: 280, width: 200, rest: 900 };
+const TOP_PONY = { file: 'ponies/celestia_flying.svg', x: 170, width: 320, rest: 900 };
 
 function pony({ file, x, width, rest }) {
   if (!fs.existsSync(file)) return { top: 0, svg: '' };
