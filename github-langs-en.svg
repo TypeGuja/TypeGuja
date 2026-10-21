@@ -1,19 +1,30 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="495" height="284" viewBox="0 0 495 284" role="img">
   <title>Most used languages</title>
   <style>
-    .h { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #ff9e64; }
-    .k { font: 600 14px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
-    .v { font: 700 14px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
-    .big { font: 700 28px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
-    .cap { font: 600 13px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
-    .sub { font: 400 11px 'Segoe UI', Ubuntu, sans-serif; fill: #565f89; }
+    .bg { fill: #0d1117; stroke: #3d444d; }
+    .ln { stroke: #3d444d; }
+    .h { font: 600 18px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #4493f8; }
+    .k { font: 400 14px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #9198a1; }
+    .v { font: 600 14px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #f0f6fc; }
+    .big { font: 600 28px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #f0f6fc; }
+    .cap { font: 600 13px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #4493f8; }
+    .sub { font: 400 11px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #9198a1; }
+    .l0 { fill: #151b23; } .l1 { fill: #033a16; } .l2 { fill: #196c2e; } .l3 { fill: #2ea043; } .l4 { fill: #56d364; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; stroke: #d1d9e0; }
+      .ln { stroke: #d1d9e0; }
+      .h, .cap { fill: #0969da; }
+      .k, .sub { fill: #59636e; }
+      .v, .big { fill: #1f2328; }
+      .l0 { fill: #eff2f5; } .l1 { fill: #aceebb; } .l2 { fill: #4ac26b; } .l3 { fill: #2da44e; } .l4 { fill: #116329; }
+    }
     .f { animation: f .4s ease-in-out backwards; }
     @keyframes f { from { opacity: 0; } }
   </style>
-  <rect x="0.5" y="0.5" rx="6" width="494" height="283" fill="#1a1b27" stroke="#2f334d"/>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="283" class="bg"/>
   <text class="h" x="25" y="38">Most used languages</text>
   <clipPath id="b"><rect x="25" y="58" width="445" height="10" rx="5"/></clipPath>
-  <g clip-path="url(#b)"><rect x="25.00" y="58" width="320.43" height="10" fill="#dea584"/><rect x="345.43" y="58" width="39.81" height="10" fill="#b07219"/><rect x="385.24" y="58" width="33.45" height="10" fill="#3572A5"/><rect x="418.69" y="58" width="22.35" height="10" fill="#f1e05a"/><rect x="441.04" y="58" width="11.12" height="10" fill="#4d41b1"/><rect x="452.16" y="58" width="5.29" height="10" fill="#aace60"/><rect x="457.45" y="58" width="3.29" height="10" fill="#e34c26"/><rect x="460.74" y="58" width="3.26" height="10" fill="#000080"/><rect x="464.00" y="58" width="6.00" height="10" fill="#565f89"/></g>
+  <g clip-path="url(#b)"><rect x="25.00" y="58" width="320.43" height="10" fill="#dea584"/><rect x="345.43" y="58" width="39.81" height="10" fill="#b07219"/><rect x="385.24" y="58" width="33.45" height="10" fill="#3572A5"/><rect x="418.69" y="58" width="22.35" height="10" fill="#f1e05a"/><rect x="441.04" y="58" width="11.12" height="10" fill="#4d41b1"/><rect x="452.16" y="58" width="5.29" height="10" fill="#aace60"/><rect x="457.45" y="58" width="3.29" height="10" fill="#e34c26"/><rect x="460.74" y="58" width="3.26" height="10" fill="#000080"/><rect x="464.00" y="58" width="6.00" height="10" fill="#9198a1"/></g>
   <g class="f" style="animation-delay:150ms" transform="translate(25, 100)">
     <circle cx="6" cy="-4" r="6" fill="#dea584"/>
     <text class="k" x="20" y="0">Rust</text>
@@ -63,7 +74,7 @@
     <text class="sub" x="20" y="16">55 KB · 2 repos</text>
   </g>
   <g class="f" style="animation-delay:870ms" transform="translate(25, 244)">
-    <circle cx="6" cy="-4" r="6" fill="#565f89"/>
+    <circle cx="6" cy="-4" r="6" fill="#9198a1"/>
     <text class="k" x="20" y="0">Other</text>
     <text class="v" x="210" y="0" text-anchor="end">1.3%</text>
     <text class="sub" x="20" y="16">101 KB · CSS, PHP, WGSL</text>

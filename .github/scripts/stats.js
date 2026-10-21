@@ -102,13 +102,25 @@ const L = {
   },
 };
 
+// GitHub's own palette; the media query follows the viewer's GitHub theme
 const STYLE = `<style>
-    .h { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #ff9e64; }
-    .k { font: 600 14px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
-    .v { font: 700 14px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
-    .big { font: 700 28px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
-    .cap { font: 600 13px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
-    .sub { font: 400 11px 'Segoe UI', Ubuntu, sans-serif; fill: #565f89; }
+    .bg { fill: #0d1117; stroke: #3d444d; }
+    .ln { stroke: #3d444d; }
+    .h { font: 600 18px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #4493f8; }
+    .k { font: 400 14px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #9198a1; }
+    .v { font: 600 14px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #f0f6fc; }
+    .big { font: 600 28px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #f0f6fc; }
+    .cap { font: 600 13px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #4493f8; }
+    .sub { font: 400 11px -apple-system, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif; fill: #9198a1; }
+    .l0 { fill: #151b23; } .l1 { fill: #033a16; } .l2 { fill: #196c2e; } .l3 { fill: #2ea043; } .l4 { fill: #56d364; }
+    @media (prefers-color-scheme: light) {
+      .bg { fill: #ffffff; stroke: #d1d9e0; }
+      .ln { stroke: #d1d9e0; }
+      .h, .cap { fill: #0969da; }
+      .k, .sub { fill: #59636e; }
+      .v, .big { fill: #1f2328; }
+      .l0 { fill: #eff2f5; } .l1 { fill: #aceebb; } .l2 { fill: #4ac26b; } .l3 { fill: #2da44e; } .l4 { fill: #116329; }
+    }
     .f { animation: f .4s ease-in-out backwards; }
     @keyframes f { from { opacity: 0; } }
   </style>`;
@@ -134,7 +146,7 @@ function statsSvg({ stats: s }, t) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="250" viewBox="0 0 495 250" role="img">
   <title>${t.title}</title>
   ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="494" height="249" fill="#1a1b27" stroke="#2f334d"/>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="249" class="bg"/>
   <text class="h" x="25" y="38">${t.title}</text>${rows}
 </svg>
 `;
@@ -150,9 +162,9 @@ function streakSvg({ stats: s, cur, best, firstDay }, t) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img">
   <title>${t.current}: ${cur.n}</title>
   ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="494" height="194" fill="#1a1b27" stroke="#2f334d"/>
-  <line x1="165" y1="40" x2="165" y2="155" stroke="#2f334d"/>
-  <line x1="330" y1="40" x2="330" y2="155" stroke="#2f334d"/>${
+  <rect x="0.5" y="0.5" rx="6" width="494" height="194" class="bg"/>
+  <line x1="165" y1="40" x2="165" y2="155" class="ln"/>
+  <line x1="330" y1="40" x2="330" y2="155" class="ln"/>${
   col(82.5, s.total, t.total, `${t.since} ${fmt(firstDay, t)}`, 150)}${
   col(247.5, cur.n, t.current, range(cur, t), 300)}${
   col(412.5, best.n, t.longest, range(best, t), 450)}
@@ -175,7 +187,7 @@ function size(b) {
 function langsSvg({ languages }, t) {
   const top = languages.slice(0, 8);
   const rest = languages.slice(8);
-  if (rest.length) top.push({ name: t.other, color: '#565f89', size: rest.reduce((a, l) => a + l.size, 0), repos: null });
+  if (rest.length) top.push({ name: t.other, color: '#9198a1', size: rest.reduce((a, l) => a + l.size, 0), repos: null });
   const sum = top.reduce((a, l) => a + l.size, 0) || 1;
   const W = 445;
   let x = 0;
@@ -201,7 +213,7 @@ function langsSvg({ languages }, t) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H}" viewBox="0 0 495 ${H}" role="img">
   <title>${t.langs}</title>
   ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="494" height="${H - 1}" fill="#1a1b27" stroke="#2f334d"/>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="${H - 1}" class="bg"/>
   <text class="h" x="25" y="38">${t.langs}</text>
   <clipPath id="b"><rect x="25" y="58" width="${W}" height="10" rx="5"/></clipPath>
   <g clip-path="url(#b)">${bar}</g>${rows}
@@ -214,14 +226,13 @@ function heatSvg({ cal }, t) {
   // columns are weeks starting on Monday
   const lead = (new Date(days[0].date + 'T00:00:00Z').getUTCDay() + 6) % 7;
   const max = Math.max(1, ...days.map(d => d.contributionCount));
-  const shade = ['#232433', '#1f4e5f', '#2a7f8f', '#4fb3c4', '#7dcfff'];
   const lvl = n => n === 0 ? 0 : Math.min(4, Math.ceil(n / max * 4));
   const S = 11, G = 2, X0 = 52, Y0 = 70;
   let cells = '', months = '', lastM = -1;
   days.forEach((d, k) => {
     const i = k + lead, col = Math.floor(i / 7), row = i % 7;
     const x = X0 + col * (S + G), y = Y0 + row * (S + G);
-    cells += `<rect x="${x}" y="${y}" width="${S}" height="${S}" rx="2" fill="${shade[lvl(d.contributionCount)]}"><title>${d.date}: ${d.contributionCount}</title></rect>`;
+    cells += `<rect x="${x}" y="${y}" width="${S}" height="${S}" rx="2" class="l${lvl(d.contributionCount)}"><title>${d.date}: ${d.contributionCount}</title></rect>`;
     const dt = new Date(d.date + 'T00:00:00Z'), m = dt.getUTCMonth();
     // label a month on the first week that starts inside it (skips a partial first column)
     if (m !== lastM && row === 0 && dt.getUTCDate() <= 7) {
@@ -233,11 +244,11 @@ function heatSvg({ cal }, t) {
   const total = days.reduce((a, d) => a + d.contributionCount, 0);
   const cols = Math.ceil((days.length + lead) / 7);
   const W = X0 + cols * (S + G) + 20, H = Y0 + 7 * (S + G) + 40;
-  const legend = shade.map((c, i) => `<rect x="${W - 125 + i * 15}" y="${H - 27}" width="${S}" height="${S}" rx="2" fill="${c}"/>`).join('');
+  const legend = [0, 1, 2, 3, 4].map(i => `<rect x="${W - 125 + i * 15}" y="${H - 27}" width="${S}" height="${S}" rx="2" class="l${i}"/>`).join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img">
   <title>${t.year}: ${total}</title>
   ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="${W - 1}" height="${H - 1}" fill="#1a1b27" stroke="#2f334d"/>
+  <rect x="0.5" y="0.5" rx="6" width="${W - 1}" height="${H - 1}" class="bg"/>
   <text class="h" x="25" y="34">${t.year}</text>
   <text class="cap" x="${W - 25}" y="34" text-anchor="end">${total} ${t.contribs}</text>
   ${months}${labels}<g class="f" style="animation-delay:150ms">${cells}</g>
@@ -264,7 +275,7 @@ function topSvg({ recent }, t, descs) {
   return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H}" viewBox="0 0 495 ${H}" role="img">
   <title>${t.top}</title>
   ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="494" height="${H - 1}" fill="#1a1b27" stroke="#2f334d"/>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="${H - 1}" class="bg"/>
   <text class="h" x="25" y="38">${t.top}</text>${rows}
 </svg>
 `;
