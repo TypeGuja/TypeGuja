@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="336" viewBox="0 0 495 336" role="img">
+  <title>Top repositories</title>
+  <style>
+    .h { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #ff9e64; }
+    .k { font: 600 14px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
+    .v { font: 700 14px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
+    .big { font: 700 28px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
+    .cap { font: 600 13px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
+    .sub { font: 400 11px 'Segoe UI', Ubuntu, sans-serif; fill: #565f89; }
+    .f { animation: f .4s ease-in-out backwards; }
+    @keyframes f { from { opacity: 0; } }
+  </style>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="335" fill="#1a1b27" stroke="#2f334d"/>
+  <text class="h" x="25" y="38">Top repositories</text>
+  <g class="f" style="animation-delay:150ms" transform="translate(25, 72)">
+    <text class="v" x="0" y="0">AlKAsH3D-Engine</text>
+    <text class="sub" x="0" y="17">an engine for creating 3D RTX games in Rust (+python)</text>
+    <circle cx="340" cy="-4" r="5" fill="#dea584"/><text class="sub" x="350" y="0">Rust</text>
+    <text class="cap" x="445" y="0" text-anchor="end">★ 2</text>
+  </g>
+  <g class="f" style="animation-delay:250ms" transform="translate(25, 116)">
+    <text class="v" x="0" y="0">Desktop-ponies-2-</text>
+    <text class="sub" x="0" y="17">Rust version Desktop ponies</text>
+    <circle cx="340" cy="-4" r="5" fill="#dea584"/><text class="sub" x="350" y="0">Rust</text>
+    <text class="cap" x="445" y="0" text-anchor="end">★ 2</text>
+  </g>
+  <g class="f" style="animation-delay:350ms" transform="translate(25, 160)">
+    <text class="v" x="0" y="0">claude-animate</text>
+    <text class="sub" x="0" y="17">Claude Code plugin that works inside Adobe Animate</text>
+    <circle cx="340" cy="-4" r="5" fill="#3572A5"/><text class="sub" x="350" y="0">Python</text>
+    <text class="cap" x="445" y="0" text-anchor="end">★ 1</text>
+  </g>
+  <g class="f" style="animation-delay:450ms" transform="translate(25, 204)">
+    <text class="v" x="0" y="0">OSI-X</text>
+    <text class="sub" x="0" y="17">Firmware for a homemade ESP32-S3 3D printer</text>
+    <circle cx="340" cy="-4" r="5" fill="#dea584"/><text class="sub" x="350" y="0">Rust</text>
+    <text class="cap" x="445" y="0" text-anchor="end">★ 1</text>
+  </g>
+  <g class="f" style="animation-delay:550ms" transform="translate(25, 248)">
+    <text class="v" x="0" y="0">MAX-Messenger-</text>
+    <text class="sub" x="0" y="17">Decompiled source of the MAX messenger</text>
+    <circle cx="340" cy="-4" r="5" fill="#b07219"/><text class="sub" x="350" y="0">Java</text>
+    <text class="cap" x="445" y="0" text-anchor="end">★ 1</text>
+  </g>
+  <g class="f" style="animation-delay:650ms" transform="translate(25, 292)">
+    <text class="v" x="0" y="0">site-AlKAsH3D-</text>
+    <text class="sub" x="0" y="17"></text>
+    <circle cx="340" cy="-4" r="5" fill="#f1e05a"/><text class="sub" x="350" y="0">JavaScript</text>
+    <text class="cap" x="445" y="0" text-anchor="end">★ 0</text>
+  </g>
+</svg>

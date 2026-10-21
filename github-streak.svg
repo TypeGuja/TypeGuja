@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img">
+  <title>Текущая серия: 1</title>
+  <style>
+    .h { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #ff9e64; }
+    .k { font: 600 14px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
+    .v { font: 700 14px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
+    .big { font: 700 28px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
+    .cap { font: 600 13px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
+    .sub { font: 400 11px 'Segoe UI', Ubuntu, sans-serif; fill: #565f89; }
+    .f { animation: f .4s ease-in-out backwards; }
+    @keyframes f { from { opacity: 0; } }
+  </style>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="194" fill="#1a1b27" stroke="#2f334d"/>
+  <line x1="165" y1="40" x2="165" y2="155" stroke="#2f334d"/>
+  <line x1="330" y1="40" x2="330" y2="155" stroke="#2f334d"/>
+  <g class="f" style="animation-delay:150ms" text-anchor="middle">
+    <text class="big" x="82.5" y="88">1069</text>
+    <text class="cap" x="82.5" y="122">Всего вкладов</text>
+    <text class="sub" x="82.5" y="144">с 1 янв 2025</text>
+  </g>
+  <g class="f" style="animation-delay:300ms" text-anchor="middle">
+    <text class="big" x="247.5" y="88">1</text>
+    <text class="cap" x="247.5" y="122">Текущая серия</text>
+    <text class="sub" x="247.5" y="144">21 окт 2026</text>
+  </g>
+  <g class="f" style="animation-delay:450ms" text-anchor="middle">
+    <text class="big" x="412.5" y="88">13</text>
+    <text class="cap" x="412.5" y="122">Рекордная серия</text>
+    <text class="sub" x="412.5" y="144">5 мая 2026 — 17 мая 2026</text>
+  </g>
+</svg>

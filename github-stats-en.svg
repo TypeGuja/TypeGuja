@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="250" viewBox="0 0 495 250" role="img">
+  <title>GitHub Stats — TypeGuja</title>
+  <style>
+    .h { font: 600 18px 'Segoe UI', Ubuntu, sans-serif; fill: #ff9e64; }
+    .k { font: 600 14px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
+    .v { font: 700 14px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
+    .big { font: 700 28px 'Segoe UI', Ubuntu, sans-serif; fill: #7dcfff; }
+    .cap { font: 600 13px 'Segoe UI', Ubuntu, sans-serif; fill: #a9b1d6; }
+    .sub { font: 400 11px 'Segoe UI', Ubuntu, sans-serif; fill: #565f89; }
+    .f { animation: f .4s ease-in-out backwards; }
+    @keyframes f { from { opacity: 0; } }
+  </style>
+  <rect x="0.5" y="0.5" rx="6" width="494" height="249" fill="#1a1b27" stroke="#2f334d"/>
+  <text class="h" x="25" y="38">GitHub Stats — TypeGuja</text>
+    <g class="f" style="animation-delay:150ms" transform="translate(25, 70)">
+      <text class="k" x="0" y="0">Stars earned:</text>
+      <text class="v" x="300" y="0">7</text>
+    </g>
+    <g class="f" style="animation-delay:270ms" transform="translate(25, 98)">
+      <text class="k" x="0" y="0">Total commits:</text>
+      <text class="v" x="300" y="0">1048</text>
+    </g>
+    <g class="f" style="animation-delay:390ms" transform="translate(25, 126)">
+      <text class="k" x="0" y="0">Contributions (30 days):</text>
+      <text class="v" x="300" y="0">51</text>
+    </g>
+    <g class="f" style="animation-delay:510ms" transform="translate(25, 154)">
+      <text class="k" x="0" y="0">Pull requests:</text>
+      <text class="v" x="300" y="0">1</text>
+    </g>
+    <g class="f" style="animation-delay:630ms" transform="translate(25, 182)">
+      <text class="k" x="0" y="0">Issues:</text>
+      <text class="v" x="300" y="0">4</text>
+    </g>
+    <g class="f" style="animation-delay:750ms" transform="translate(25, 210)">
+      <text class="k" x="0" y="0">Public repositories:</text>
+      <text class="v" x="300" y="0">12</text>
+    </g>
+</svg>
