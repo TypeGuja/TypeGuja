@@ -20,7 +20,7 @@
 
 ## 🗂️ Проекты
 
-<details open>
+<details>
 <summary><b>Движки и графика</b></summary>
 <br>
 

@@ -20,7 +20,7 @@ I write all kinds of things in **Rust**: my own 3D engine with RTX, firmware for
 
 ## 🗂️ Projects
 
-<details open>
+<details>
 <summary><b>Engines and graphics</b></summary>
 <br>
 
