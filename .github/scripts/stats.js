@@ -44,7 +44,7 @@ async function collect() {
     }
   const languages = Object.values(langs).sort((a, b) => b.size - a.size);
   const recent = u.repositories.nodes.filter(r => !r.isFork)
-    .sort((a, b) => b.stargazerCount - a.stargazerCount || b.pushedAt.localeCompare(a.pushedAt)).slice(0, 6);
+    .sort((a, b) => b.stargazerCount - a.stargazerCount || b.pushedAt.localeCompare(a.pushedAt)).slice(0, 5);
   const days = [];
   for (const year of u.contributionsCollection.contributionYears.slice().sort()) {
     const d = await gql(`query($l: String!, $f: DateTime!, $t: DateTime!) { user(login: $l) {
@@ -76,7 +76,7 @@ async function collect() {
       if (++run >= best.n) Object.assign(best, { n: run, from: start, to: d.date });
     } else run = 0;
   }
-  return { stats, cur, best, firstDay: cal.length ? cal[0].date : today, languages, recent, cal };
+  return { stats, cur, best, firstDay: cal.length ? cal[0].date : today, languages, recent };
 }
 
 const L = {
@@ -86,8 +86,7 @@ const L = {
     total: 'Всего вкладов', current: 'Текущая серия', longest: 'Рекордная серия',
     none: 'нет серии', since: 'с',
     langs: 'Самые используемые языки', other: 'Другие', repoWord: ['репозиторий', 'репозитория', 'репозиториев'],
-    year: 'Активность за год', less: 'меньше', more: 'больше', contribs: 'вкладов',
-    top: 'Топ репозиториев', days: ['пн', '', 'ср', '', 'пт', '', ''],
+    top: 'Топ репозиториев',
     months: ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'],
   },
   en: {
@@ -96,8 +95,7 @@ const L = {
     total: 'Total contributions', current: 'Current streak', longest: 'Longest streak',
     none: 'no streak', since: 'since',
     langs: 'Most used languages', other: 'Other', repoWord: ['repo', 'repos', 'repos'],
-    year: 'Activity over the last year', less: 'less', more: 'more', contribs: 'contributions',
-    top: 'Top repositories', days: ['Mon', '', 'Wed', '', 'Fri', '', ''],
+    top: 'Top repositories',
     months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
   },
 };
@@ -184,7 +182,7 @@ function size(b) {
   return b >= 1 << 20 ? `${(b / (1 << 20)).toFixed(1)} MB` : `${Math.max(1, Math.round(b / 1024))} KB`;
 }
 
-function langsSvg({ languages }, t) {
+function langsSvg({ languages, rowH }, t) {
   const top = languages.slice(0, 8);
   const rest = languages.slice(8);
   if (rest.length) top.push({ name: t.other, color: '#9198a1', size: rest.reduce((a, l) => a + l.size, 0), repos: null });
@@ -209,7 +207,7 @@ function langsSvg({ languages }, t) {
     <text class="sub" x="20" y="16">${esc(sub)}</text>
   </g>`;
   }).join('');
-  const H = 100 + Math.ceil(top.length / 2) * 36 + 4;
+  const H = rowH;
   const p = pony(LANGS_PONY);
   return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H + p.top}" viewBox="0 0 495 ${H + p.top}" role="img">
   <title>${t.langs}</title>
@@ -237,44 +235,7 @@ function pony({ file, x, width, rest }) {
   return { top: Math.ceil(rest * s), svg: `\n  <g transform="translate(${x}, 0) scale(${s.toFixed(4)})">${body}</g>` };
 }
 
-function heatSvg({ cal }, t) {
-  const days = cal.slice(-364);
-  // columns are weeks starting on Monday
-  const lead = (new Date(days[0].date + 'T00:00:00Z').getUTCDay() + 6) % 7;
-  const max = Math.max(1, ...days.map(d => d.contributionCount));
-  const lvl = n => n === 0 ? 0 : Math.min(4, Math.ceil(n / max * 4));
-  const S = 11, G = 2, X0 = 52, Y0 = 70;
-  let cells = '', months = '', lastM = -1;
-  days.forEach((d, k) => {
-    const i = k + lead, col = Math.floor(i / 7), row = i % 7;
-    const x = X0 + col * (S + G), y = Y0 + row * (S + G);
-    cells += `<rect x="${x}" y="${y}" width="${S}" height="${S}" rx="2" class="l${lvl(d.contributionCount)}"><title>${d.date}: ${d.contributionCount}</title></rect>`;
-    const dt = new Date(d.date + 'T00:00:00Z'), m = dt.getUTCMonth();
-    // label a month on the first week that starts inside it (skips a partial first column)
-    if (m !== lastM && row === 0 && dt.getUTCDate() <= 7) {
-      if (col < 51) months += `<text class="sub" x="${x}" y="${Y0 - 8}">${t.months[m]}</text>`;
-      lastM = m;
-    }
-  });
-  const labels = t.days.map((n, r) => n && `<text class="sub" x="${X0 - 8}" y="${Y0 + r * (S + G) + 9}" text-anchor="end">${n}</text>`).join('');
-  const total = days.reduce((a, d) => a + d.contributionCount, 0);
-  const cols = Math.ceil((days.length + lead) / 7);
-  const W = X0 + cols * (S + G) + 20, H = Y0 + 7 * (S + G) + 40;
-  const legend = [0, 1, 2, 3, 4].map(i => `<rect x="${W - 125 + i * 15}" y="${H - 27}" width="${S}" height="${S}" rx="2" class="l${i}"/>`).join('');
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img">
-  <title>${t.year}: ${total}</title>
-  ${STYLE}
-  <rect x="0.5" y="0.5" rx="6" width="${W - 1}" height="${H - 1}" class="bg"/>
-  <text class="h" x="25" y="34">${t.year}</text>
-  <text class="cap" x="${W - 25}" y="34" text-anchor="end">${total} ${t.contribs}</text>
-  ${months}${labels}<g class="f" style="animation-delay:150ms">${cells}</g>
-  <text class="sub" x="${W - 132}" y="${H - 18}" text-anchor="end">${t.less}</text>${legend}
-  <text class="sub" x="${W - 47}" y="${H - 18}">${t.more}</text>
-</svg>
-`;
-}
-
-function topSvg({ recent }, t, descs) {
+function topSvg({ recent, rowH }, t, descs) {
   const rows = recent.map((r, i) => {
     let d = descs[r.name] || r.description || '';
     if (d.length > 62) d = d.slice(0, 60) + '…';
@@ -287,7 +248,7 @@ function topSvg({ recent }, t, descs) {
     <text class="cap" x="445" y="0" text-anchor="end">★ ${r.stargazerCount}</text>
   </g>`;
   }).join('');
-  const H = 72 + recent.length * 44;
+  const H = rowH;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="495" height="${H}" viewBox="0 0 495 ${H}" role="img">
   <title>${t.top}</title>
   ${STYLE}
@@ -318,14 +279,14 @@ const DESC = {
 
 (async () => {
   const data = await collect();
+  // langs and top cards sit side by side: give them one height
+  data.rowH = Math.max(100 + Math.ceil(Math.min(data.languages.length, 9) / 2) * 36 + 4, 72 + data.recent.length * 44);
   fs.writeFileSync('github-stats.svg', statsSvg(data, L.ru));
   fs.writeFileSync('github-stats-en.svg', statsSvg(data, L.en));
   fs.writeFileSync('github-streak.svg', streakSvg(data, L.ru));
   fs.writeFileSync('github-streak-en.svg', streakSvg(data, L.en));
   fs.writeFileSync('github-langs.svg', langsSvg(data, L.ru));
   fs.writeFileSync('github-langs-en.svg', langsSvg(data, L.en));
-  fs.writeFileSync('github-activity.svg', heatSvg(data, L.ru));
-  fs.writeFileSync('github-activity-en.svg', heatSvg(data, L.en));
   fs.writeFileSync('github-top.svg', topSvg(data, L.ru, DESC.ru));
   fs.writeFileSync('github-top-en.svg', topSvg(data, L.en, DESC.en));
   console.log(JSON.stringify({ ...data.stats, streak: data.cur.n, longest: data.best.n,

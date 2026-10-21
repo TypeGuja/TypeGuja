@@ -12,12 +12,8 @@ I write all kinds of things in **Rust**: my own 3D engine with RTX, firmware for
 </p>
 
 <p align="center">
-  <img src="./github-langs-en.svg" alt="Most used languages" />
-  <img src="./github-top-en.svg" alt="Top repositories" />
-</p>
-
-<p align="center">
-  <img src="./github-activity-en.svg" alt="Activity over the last year" />
+  <img src="./github-langs-en.svg" alt="Most used languages" width="49%" />
+  <img src="./github-top-en.svg" alt="Top repositories" width="49%" />
 </p>
 
 <sub>The cards update every 6 hours via GitHub Actions. Languages are counted by code size in my public repositories (forks and decompiled code excluded).</sub>

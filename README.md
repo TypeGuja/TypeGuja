@@ -12,12 +12,8 @@
 </p>
 
 <p align="center">
-  <img src="./github-langs.svg" alt="Самые используемые языки" />
-  <img src="./github-top.svg" alt="Топ репозиториев" />
-</p>
-
-<p align="center">
-  <img src="./github-activity.svg" alt="Активность за год" />
+  <img src="./github-langs.svg" alt="Самые используемые языки" width="49%" />
+  <img src="./github-top.svg" alt="Топ репозиториев" width="49%" />
 </p>
 
 <sub>Карточки сами обновляются каждые 6 часов через GitHub Actions. Языки считаются по объёму кода в моих публичных репозиториях (без форков и декомпилированного кода).</sub>
