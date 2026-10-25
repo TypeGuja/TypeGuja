@@ -29,15 +29,15 @@
     </g>
     <g class="f" style="animation-delay:270ms" transform="translate(25, 98)">
       <text class="k" x="0" y="0">Коммитов всего:</text>
-      <text class="v" x="300" y="0">1066</text>
+      <text class="v" x="300" y="0">1067</text>
     </g>
     <g class="f" style="animation-delay:390ms" transform="translate(25, 126)">
       <text class="k" x="0" y="0">Вкладов за 30 дней:</text>
-      <text class="v" x="300" y="0">62</text>
+      <text class="v" x="300" y="0">64</text>
     </g>
     <g class="f" style="animation-delay:510ms" transform="translate(25, 154)">
       <text class="k" x="0" y="0">Pull Request’ов:</text>
-      <text class="v" x="300" y="0">4</text>
+      <text class="v" x="300" y="0">5</text>
     </g>
     <g class="f" style="animation-delay:630ms" transform="translate(25, 182)">
       <text class="k" x="0" y="0">Issues:</text>
