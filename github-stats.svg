@@ -29,7 +29,7 @@
     </g>
     <g class="f" style="animation-delay:270ms" transform="translate(25, 98)">
       <text class="k" x="0" y="0">Коммитов всего:</text>
-      <text class="v" x="300" y="0">1082</text>
+      <text class="v" x="300" y="0">1079</text>
     </g>
     <g class="f" style="animation-delay:390ms" transform="translate(25, 126)">
       <text class="k" x="0" y="0">Вкладов за 30 дней:</text>
@@ -45,6 +45,6 @@
     </g>
     <g class="f" style="animation-delay:750ms" transform="translate(25, 210)">
       <text class="k" x="0" y="0">Публичных репозиториев:</text>
-      <text class="v" x="300" y="0">15</text>
+      <text class="v" x="300" y="0">14</text>
     </g>
 </svg>

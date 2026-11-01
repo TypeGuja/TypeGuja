@@ -25,30 +25,30 @@
   <rect x="0.5" y="0.5" rx="6" width="494" height="291" class="bg"/>
   <text class="h" x="25" y="38">Самые используемые языки</text>
   <clipPath id="b"><rect x="25" y="58" width="445" height="10" rx="5"/></clipPath>
-  <g clip-path="url(#b)"><rect x="25.00" y="58" width="325.29" height="10" fill="#dea584"/><rect x="350.29" y="58" width="33.10" height="10" fill="#3572A5"/><rect x="383.39" y="58" width="31.79" height="10" fill="#b07219"/><rect x="415.18" y="58" width="25.86" height="10" fill="#f1e05a"/><rect x="441.04" y="58" width="8.88" height="10" fill="#4d41b1"/><rect x="449.92" y="58" width="8.14" height="10" fill="#aace60"/><rect x="458.06" y="58" width="3.83" height="10" fill="#663399"/><rect x="461.89" y="58" width="3.23" height="10" fill="#e34c26"/><rect x="465.12" y="58" width="4.88" height="10" fill="#9198a1"/></g>
+  <g clip-path="url(#b)"><rect x="25.00" y="58" width="330.65" height="10" fill="#dea584"/><rect x="355.65" y="58" width="33.60" height="10" fill="#3572A5"/><rect x="389.25" y="58" width="32.27" height="10" fill="#b07219"/><rect x="421.52" y="58" width="24.00" height="10" fill="#f1e05a"/><rect x="445.52" y="58" width="9.01" height="10" fill="#4d41b1"/><rect x="454.53" y="58" width="8.27" height="10" fill="#aace60"/><rect x="462.80" y="58" width="2.64" height="10" fill="#000080"/><rect x="465.44" y="58" width="2.52" height="10" fill="#663399"/><rect x="467.97" y="58" width="2.03" height="10" fill="#9198a1"/></g>
   <g class="f" style="animation-delay:150ms" transform="translate(25, 100)">
     <circle cx="6" cy="-4" r="6" fill="#dea584"/>
     <text class="k" x="20" y="0">Rust</text>
-    <text class="v" x="210" y="0" text-anchor="end">73.1%</text>
+    <text class="v" x="210" y="0" text-anchor="end">74.3%</text>
     <text class="sub" x="20" y="16">6.7 MB · 8 репозиториев</text>
   </g>
   <g class="f" style="animation-delay:240ms" transform="translate(260, 100)">
     <circle cx="6" cy="-4" r="6" fill="#3572A5"/>
     <text class="k" x="20" y="0">Python</text>
-    <text class="v" x="210" y="0" text-anchor="end">7.4%</text>
+    <text class="v" x="210" y="0" text-anchor="end">7.6%</text>
     <text class="sub" x="20" y="16">695 KB · 5 репозиториев</text>
   </g>
   <g class="f" style="animation-delay:330ms" transform="translate(25, 136)">
     <circle cx="6" cy="-4" r="6" fill="#b07219"/>
     <text class="k" x="20" y="0">Java</text>
-    <text class="v" x="210" y="0" text-anchor="end">7.1%</text>
+    <text class="v" x="210" y="0" text-anchor="end">7.3%</text>
     <text class="sub" x="20" y="16">667 KB · 1 репозиторий</text>
   </g>
   <g class="f" style="animation-delay:420ms" transform="translate(260, 136)">
     <circle cx="6" cy="-4" r="6" fill="#f1e05a"/>
     <text class="k" x="20" y="0">JavaScript</text>
-    <text class="v" x="210" y="0" text-anchor="end">5.8%</text>
-    <text class="sub" x="20" y="16">543 KB · 5 репозиториев</text>
+    <text class="v" x="210" y="0" text-anchor="end">5.4%</text>
+    <text class="sub" x="20" y="16">496 KB · 4 репозитория</text>
   </g>
   <g class="f" style="animation-delay:510ms" transform="translate(25, 172)">
     <circle cx="6" cy="-4" r="6" fill="#4d41b1"/>
@@ -59,26 +59,26 @@
   <g class="f" style="animation-delay:600ms" transform="translate(260, 172)">
     <circle cx="6" cy="-4" r="6" fill="#aace60"/>
     <text class="k" x="20" y="0">HLSL</text>
-    <text class="v" x="210" y="0" text-anchor="end">1.8%</text>
+    <text class="v" x="210" y="0" text-anchor="end">1.9%</text>
     <text class="sub" x="20" y="16">171 KB · 1 репозиторий</text>
   </g>
   <g class="f" style="animation-delay:690ms" transform="translate(25, 208)">
-    <circle cx="6" cy="-4" r="6" fill="#663399"/>
-    <text class="k" x="20" y="0">CSS</text>
-    <text class="v" x="210" y="0" text-anchor="end">0.9%</text>
-    <text class="sub" x="20" y="16">80 KB · 3 репозитория</text>
+    <circle cx="6" cy="-4" r="6" fill="#000080"/>
+    <text class="k" x="20" y="0">Lua</text>
+    <text class="v" x="210" y="0" text-anchor="end">0.6%</text>
+    <text class="sub" x="20" y="16">55 KB · 2 репозитория</text>
   </g>
   <g class="f" style="animation-delay:780ms" transform="translate(260, 208)">
-    <circle cx="6" cy="-4" r="6" fill="#e34c26"/>
-    <text class="k" x="20" y="0">HTML</text>
-    <text class="v" x="210" y="0" text-anchor="end">0.7%</text>
-    <text class="sub" x="20" y="16">68 KB · 3 репозитория</text>
+    <circle cx="6" cy="-4" r="6" fill="#663399"/>
+    <text class="k" x="20" y="0">CSS</text>
+    <text class="v" x="210" y="0" text-anchor="end">0.6%</text>
+    <text class="sub" x="20" y="16">52 KB · 2 репозитория</text>
   </g>
   <g class="f" style="animation-delay:870ms" transform="translate(25, 244)">
     <circle cx="6" cy="-4" r="6" fill="#9198a1"/>
     <text class="k" x="20" y="0">Другие</text>
-    <text class="v" x="210" y="0" text-anchor="end">1.1%</text>
-    <text class="sub" x="20" y="16">102 KB · Lua, PHP, WGSL</text>
+    <text class="v" x="210" y="0" text-anchor="end">0.5%</text>
+    <text class="sub" x="20" y="16">42 KB · HTML, WGSL, C</text>
   </g>
   </g>
   <g transform="translate(150, 0) scale(0.2578)">
