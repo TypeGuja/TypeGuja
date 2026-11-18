@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="64" viewBox="0 0 320 64" fill="none">
+  <rect x=".5" y=".5" width="319" height="63" rx="14" fill="#fff" stroke="#d0d7de"/>
+  <circle cx="33" cy="32" r="19" fill="#f3f4f6"/>
+  <path d="M30 23.5v17l13-8.5-13-8.5Z" fill="#24292f"/>
+  <text x="64" y="28" fill="#24292f" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="13" font-weight="600">Alex Suzz</text>
+  <text x="64" y="46" fill="#656d76" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="12">Session 8</text>
+  <path d="M202 34h5l3-8 5 17 5-13 4 8h6l4-5 4 3 5-11 5 16 5-10 4 3h8" stroke="#0969da" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+  <text x="281" y="36" fill="#656d76" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif" font-size="11">MP3</text>
+</svg>

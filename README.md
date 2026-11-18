@@ -4,6 +4,8 @@
 
 Пишу на **Rust** всё подряд: свой 3D-движок с RTX, прошивки для железа, анимацию пони и моды для игр.
 
+<a href="https://raw.githubusercontent.com/TypeGuja/TypeGuja/main/Alex_Suzz_-_Alex_Suzz_Session_8_(iPleer.fm).mp3"><picture><source media="(prefers-color-scheme: dark)" srcset="./player-dark.svg"><img src="./player-light.svg" width="320" height="64" alt="▶ Alex Suzz — Session 8"></picture></a>
+
 ## 📊 Статистика
 
 <p align="center">

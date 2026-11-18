@@ -4,6 +4,9 @@
 
 I write all kinds of things in **Rust**: my own 3D engine with RTX, firmware for hardware, pony animation and game mods.
 
+
+<a href="https://raw.githubusercontent.com/TypeGuja/TypeGuja/main/Alex_Suzz_-_Alex_Suzz_Session_8_(iPleer.fm).mp3"><picture><source media="(prefers-color-scheme: dark)" srcset="./player-dark.svg"><img src="./player-light.svg" width="320" height="64" alt="▶ Alex Suzz — Session 8"></picture></a>
+
 ## 📊 Stats
 
 <p align="center">
